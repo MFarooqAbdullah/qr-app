@@ -1,5 +1,10 @@
 # QR APP
 A walkthrough of creating an Angular 8 web application and a QR Code generator app completely based on Angular while hosted on Netlify
+![Image of Home](https://ibb.co/WcTH4H2)
+![Image of QR](https://ibb.co/tHs18Kq)
+![Image of History](https://ibb.co/jr74RzS)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
