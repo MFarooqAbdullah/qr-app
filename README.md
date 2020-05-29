@@ -1,9 +1,8 @@
 # QR APP
 A walkthrough of creating an Angular 8 web application and a QR Code generator app completely based on Angular while hosted on Netlify
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![Image of Home](https://ibb.co/WcTH4H2)
-![Image of QR](https://ibb.co/tHs18Kq)
-![Image of History](https://ibb.co/jr74RzS)
+![Image of Home](https://i.ibb.co/LCG0X0Z/home-page.png)
+![Image of QR](https://i.ibb.co/87F8cbH/create-qr-page.png)
+![Image of History](https://i.ibb.co/Fhwdg35/history-page.png)
 
 
 
