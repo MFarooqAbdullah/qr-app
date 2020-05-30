@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageutilService } from '../../services/storageutil.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-
+  historyCount = 0;
+  constructor(private storageUtilService: StorageutilService) { }
+ 
   ngOnInit() {
+    this.updateHistoryCount();
   }
-
-}
+ 
+  updateHistoryCount() {
+    this.historyCount = this.storageUtilService.getHistoryCount();
+  }
+ }
