@@ -10,7 +10,7 @@ export class RestutilService {
  
   constructor(private httpClient: HttpClient) { }
  
-  public getQRCode(text: string): Observable {
+  public getQRCode(text: string) {
     // Create the url with the provided data and other options
     let url = this.BASE_URL;
     url = url.replace("{data}", text).replace(/{edge}/g, this.edgeSize);

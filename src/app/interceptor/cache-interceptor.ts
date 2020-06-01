@@ -3,26 +3,30 @@ import { HttpInterceptor, HttpResponse, HttpRequest, HttpHandler, HttpEvent } fr
 import { tap } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 
+
 @Injectable({
- providedIn: 'root'
+    providedIn: 'root'
 })
-export class RequestCachingService implements HttpInterceptor {
- private cacheMap = new Map<string, HttpResponse<any>>();
+  
+export class CacheInterceptor implements HttpInterceptor {
 
- constructor() { }
+    private cacheMap = new Map<string, HttpResponse<any>>();
 
- intercept(req: HttpRequest, next: HttpHandler): Observable<HttpEvent<any>> {
-   const cachedResponse = this.cacheMap.get(req.urlWithParams);
+    constructor() { }
+  
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      const cachedResponse = this.cacheMap.get(req.urlWithParams);
+      
+      if (cachedResponse) {
+        return of(cachedResponse);
+      }
+  
+      return next.handle(req).pipe(tap(event => {
+        if (event instanceof HttpResponse) {
+          this.cacheMap.set(req.urlWithParams, event);
+        }
+      }))
+      
+    }
 
-   if (cachedResponse) {
-     return of(cachedResponse);
-   }
-
-   return next.handle(req).pipe(tap(event => {
-     if (event instanceof HttpResponse) {
-       this.cacheMap.set(req.urlWithParams, event);
-     }
-   }))
-
- }
 }
