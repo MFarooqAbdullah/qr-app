@@ -13,7 +13,6 @@ export class HistoryComponent implements OnInit {
   title = 'History';
   showHistoryNav = false;
   historyList;
-
   constructor(private storageService: StorageutilService, private snackbar: MatSnackBar) { }
 
   ngOnInit() {
@@ -22,6 +21,7 @@ export class HistoryComponent implements OnInit {
 
   private populateHistory() {
     this.historyList = this.storageService.readAllHistory();
+    // console.log('------History--------------', this.historyList);
   }
 
   delete(text: string) {
