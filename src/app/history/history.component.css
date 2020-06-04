@@ -13,6 +13,12 @@
 
  */
 /*     brand Colors              */
+.fab-bottom-right {
+  position: fixed;
+  left: auto;
+  bottom: 5%;
+  right: 10%;
+}
 .card {
     font-size: .875rem;
   }
