@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageutilService } from '../../services/storageutil.service';
 import { RestutilService } from '../../services/restutil.service';
+import { NotificationService } from '../../services/notification.service';
+
 import { MatSnackBar } from '@angular/material';
 @Component({
   selector: 'app-create-qr',
@@ -19,11 +21,16 @@ export class CreateQrComponent implements OnInit {
  
   constructor(private snackBar: MatSnackBar,
       private restutil: RestutilService,
-      private storageService: StorageutilService) { }
+      private storageService: StorageutilService,
+      private notifyme: NotificationService
+    ) { }
  
   ngOnInit() {
   }
- 
+  
+ notify(){
+  this.notifyme.notify('success','hello');
+ }
   createQrCode() {
     //Check if any value is given for the qr code text
     if (!!this.qrText) {
