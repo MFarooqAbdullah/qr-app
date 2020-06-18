@@ -5,7 +5,7 @@ import { HttpClient  } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestutilService {
-  private edgeSize = '300';
+  private edgeSize = '400';
   private BASE_URL = 'https://api.qrserver.com/v1/create-qr-code/?data={data}!&size={edge}x{edge}';
  
   constructor(private httpClient: HttpClient) { }
